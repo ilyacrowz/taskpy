@@ -19,3 +19,11 @@ max_number = int(input())
 for i in range(len(list_1)):
     if min_number <= list_1[i] <= max_number:
         print(i)
+
+Vinny = input('Enter Vinny Song ')
+VinnySong = Vinny.lower().split()
+RitmOrNot = lambda x: sum(1 for i in x if i in 'аеёиоуыэюя')
+if all([RitmOrNot(i) == VinnySong[0] for i in VinnySong]):
+    print('Парам пам-пам')
+else:
+    print('Пам парам')
