@@ -1,4 +1,4 @@
-public class Homework {
+public class mn {
 
   public static void main(String[] args) {
       System.out.println(isSumBetween10And20(5, 15)); // true
@@ -59,7 +59,8 @@ public class Homework {
             arr[i] = initialValue;
             System.out.print("[" + i + "]" + arr[i] + " ");
         }
-  }
+      }
+  
   
   /**
    * 1. Задать целочисленный массив, состоящий из элементов 0 и 1.
@@ -70,4 +71,46 @@ public class Homework {
    * Определить элементы одной из диагоналей можно по следующему принципу: индексы таких элементов равны, то есть [0][0], [1][1], [2][2], …, [n][n];
    * * Также заполнить элементы побочной диагонали
    */
+  static int[] replaceArrayValues(int[] array) {
+    int arrayLength = array.length;
+
+    for (int i = 0; i < arrayLength; i++) {
+        array[i] = (array[i] > 0) ? 0 : 1;
+    }
+    return array;
   }
+
+  static int[][] fillDiagonalArray(int[][] array) {
+    int length = array.length;
+    int firstItem;
+    int lastItem;
+    int firstArray;
+    int lastArray;
+
+    for (int i = 0; i < length; i++) {
+        firstItem = i;
+        lastItem = length - i - 1;
+
+        firstArray = array[i][firstItem];
+        lastArray = array[i][lastItem];
+
+        if (firstArray != 1 && lastArray != 1) {
+            array[i][firstItem] = 1;
+            array[i][lastItem] = 1;
+        }
+    }
+    return array;
+  }
+  static int[] multiplyLess6(int[] array) {
+    int length = array.length;
+    int tmp;
+
+    for (int i = 0; i < length; i++) {
+        tmp = array[i];
+        array[i] = tmp < 6 ? tmp * 2 : tmp;
+    }
+    return array;
+  }
+
+
+}
